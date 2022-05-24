@@ -1,1 +1,1 @@
-permissions
+readme de permissions
