@@ -6,14 +6,14 @@ delete_file(){ rm /var/run/my_process.pid; }
 killit(){ kill "$(cat /var/run/my_process.pid)"; }
 
 if [ "$1" == "start" ]; then
-	execpid; new_file
-	echo "manage_my_process started"
+        execpid; new_file
+        echo "manage_my_process started"
 elif [ "$1" == "stop" ]; then
-	killit; delete_file
-	echo "manage_my_process stopped"
+        killit; delete_file
+        echo "manage_my_process stopped"
 elif [ "$1" == "restart" ]; then
-	killit; delete_file; execpid; new_file
-	echo "manage_my_process restarted"
+        killit; delete_file; execpid; new_file
+        echo "manage_my_process restarted"
 else
-	echo "Usage: manage_my_process {start|stop|restart}"
+        echo "Usage: manage_my_process {start|stop|restart}"
 fi
